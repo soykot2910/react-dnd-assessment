@@ -132,3 +132,12 @@ body {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
   cursor: row-resize;
 }
+
+.modal {
+  position: fixed;
+  top: 150px;
+  left: 150px;
+  width: 50%;
+  height: 50%;
+  background: greenyellow;
+}

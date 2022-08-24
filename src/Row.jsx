@@ -1,14 +1,27 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useDrag } from "react-dnd";
 import { ROW } from "./constants";
 import DropZone from "./DropZone";
 import Column from "./Column";
 import Split from "react-split";
+import Modal from "react-modal";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 const style = {};
 const Row = ({ data, components, handleDrop, path }) => {
-  const ref = useRef(null);
+  const [showModal, setShowModal] = useState(false);
 
+  const ref = useRef(null);
   const [{ isDragging }, drag] = useDrag({
     item: {
       type: ROW,
@@ -36,8 +49,17 @@ const Row = ({ data, components, handleDrop, path }) => {
     );
   };
 
+  const handleToggle = () => {
+    setShowModal(!showModal);
+  };
+
   return (
-    <div ref={ref} style={{ ...style, opacity }} className="base draggable row">
+    <div
+      ref={ref}
+      onClick={handleToggle}
+      style={{ ...style, opacity }}
+      className="base draggable row"
+    >
       {data.id}
       <Split direction="vertical">
         <Split className="wrapper">
@@ -68,6 +90,15 @@ const Row = ({ data, components, handleDrop, path }) => {
           />
         </Split>
       </Split>
+
+      <Modal
+        isOpen={showModal}
+        onRequestClose={handleToggle}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h3>Item id: {data.id}</h3>
+      </Modal>
     </div>
   );
 };
