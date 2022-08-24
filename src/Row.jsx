@@ -56,7 +56,7 @@ const Row = ({ data, components, handleDrop, path }) => {
   return (
     <div
       ref={ref}
-      onClick={handleToggle}
+      // onClick={handleToggle}
       style={{ ...style, opacity }}
       className="base draggable row"
     >
@@ -88,6 +88,7 @@ const Row = ({ data, components, handleDrop, path }) => {
             className="horizontalDrag"
             isLast
           />
+          
         </Split>
       </Split>
 

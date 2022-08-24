@@ -129,7 +129,7 @@ const Container = () => {
             const currentPath = `${index}`;
 
             return (
-              <React.Fragment key={row.id}>
+              <div key={row.id}>
                 <DropZone
                   data={{
                     path: currentPath,
@@ -139,7 +139,7 @@ const Container = () => {
                   path={currentPath}
                 />
                 {renderRow(row, currentPath)}
-              </React.Fragment>
+              </div>
             );
           })}
           <DropZone
@@ -159,7 +159,6 @@ const Container = () => {
           onDrop={handleDropToTrashBin}
         />
 
-        <p> {layout.length}</p>
         <textarea>{JSON.stringify(layout)}</textarea>
       </div>
     </div>

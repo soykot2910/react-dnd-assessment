@@ -45,7 +45,7 @@ const Column = ({ data, components, handleDrop, path }) => {
         const currentPath = `${path}-${index}`;
 
         return (
-          <React.Fragment key={component.id}>
+          <div key={component.id}>
             <DropZone
               data={{
                 path: currentPath,
@@ -54,7 +54,7 @@ const Column = ({ data, components, handleDrop, path }) => {
               onDrop={handleDrop}
             />
             {renderComponent(component, currentPath)}
-          </React.Fragment>
+          </div>
         );
       })}
       <DropZone

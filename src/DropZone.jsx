@@ -63,20 +63,20 @@ const DropZone = ({ data, onDrop, isLast, className }) => {
     },
     collect: (monitor) => ({
       isOver: monitor.isOver(),
-      canDrop: monitor.canDrop()
-    })
+      canDrop: monitor.canDrop(),
+    }),
   });
 
   const isActive = isOver && canDrop;
   return (
-    <div
-      className={classNames(
-        "dropZone",
-        { active: isActive, isLast },
-        className
-      )}
-      ref={drop}
-    />
+      <div
+        className={classNames(
+          "dropZone",
+          { active: isActive, isLast },
+          className
+        )}
+        ref={drop}
+      />
   );
 };
 export default DropZone;
