@@ -1,21 +1,21 @@
 import React, { useState, useCallback } from "react";
 
-import DropZone from "./DropZone";
-import TrashDropZone from "./TrashDropZone";
-import SideBarItem from "./SideBarItem";
-import Row from "./Row";
-import initialData from "./initial-data";
+import DropZone from "./components/DropZone";
+import TrashDropZone from "./components/TrashDropZone";
+import SideBarItem from "./components/SideBarItem";
+import Row from "./components/Row";
+import initialData from "./utils/initial-data";
 import {
   handleMoveWithinParent,
   handleMoveToDifferentParent,
   handleMoveSidebarComponentIntoParent,
   handleRemoveItemFromLayout,
-} from "./helpers";
+} from "./utils/helpers";
 
-import { SIDEBAR_ITEMS, SIDEBAR_ITEM, COMPONENT, COLUMN } from "./constants";
+import { SIDEBAR_ITEMS, SIDEBAR_ITEM, COMPONENT, COLUMN } from "./utils/constants";
 import shortid from "shortid";
 
-const Container = () => {
+const App = () => {
   const initialLayout = initialData.layout;
   const initialComponents = initialData.components;
   const [layout, setLayout] = useState(initialLayout);
@@ -164,4 +164,4 @@ const Container = () => {
     </div>
   );
 };
-export default Container;
+export default App;

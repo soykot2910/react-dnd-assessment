@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useDrag } from "react-dnd";
-import { COLUMN } from "./constants";
+import { COLUMN } from "../utils/constants";
 import DropZone from "./DropZone";
 import Component from "./Component";
 

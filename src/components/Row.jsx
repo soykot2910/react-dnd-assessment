@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useDrag } from "react-dnd";
-import { ROW } from "./constants";
+import { ROW } from "../utils/constants";
 import DropZone from "./DropZone";
 import Column from "./Column";
 import Split from "react-split";

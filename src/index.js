@@ -1,20 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Example from "./example";
 import { DndProvider } from "react-dnd";
 import Backend from "react-dnd-html5-backend";
 
 import "./styles.css";
+import App from "./App";
 
-function App() {
+function Root() {
   return (
-    <div className="App">
-      <DndProvider backend={Backend}>
-        <Example />
-      </DndProvider>
-    </div>
+    <DndProvider backend={Backend}>
+      <App />
+    </DndProvider>
   );
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Root />, rootElement);
