@@ -12,7 +12,12 @@ import {
   handleRemoveItemFromLayout,
 } from "./utils/helpers";
 
-import { SIDEBAR_ITEMS, SIDEBAR_ITEM, COMPONENT, COLUMN } from "./utils/constants";
+import {
+  SIDEBAR_ITEMS,
+  SIDEBAR_ITEM,
+  COMPONENT,
+  COLUMN,
+} from "./utils/constants";
 import shortid from "shortid";
 
 const App = () => {
@@ -116,6 +121,8 @@ const App = () => {
     );
   };
 
+  console.log(JSON.stringify(layout));
+
   return (
     <div className="body">
       <div className="sideBar">
@@ -159,7 +166,10 @@ const App = () => {
           onDrop={handleDropToTrashBin}
         />
 
-        <textarea>{JSON.stringify(layout)}</textarea>
+        <div>
+          <h3>Full Object Data:</h3>
+          <pre>{JSON.stringify(layout, null, 2)}</pre>
+        </div>
       </div>
     </div>
   );

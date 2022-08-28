@@ -5,17 +5,7 @@ import DropZone from "./DropZone";
 import Column from "./Column";
 import Split from "react-split";
 import Modal from "react-modal";
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+import {customStyles} from '../utils/customeStyle'
 
 const style = {};
 const Row = ({ data, components, handleDrop, path }) => {
