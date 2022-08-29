@@ -1,5 +1,3 @@
-## React DnD
-> Live demo [_here_](https://elaborate-meerkat-9582e7.netlify.app//)
 
 #### Technologies Used
 - React
